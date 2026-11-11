@@ -1,402 +1,2206 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Veilmore — Modest Fashion untuk Perempuan Indonesia</title>
-<meta name="description" content="Veilmore adalah brand modest fashion Indonesia. Abaya, Outer, dan Abaia yang dirancang dengan keanggunan dan kenyamanan." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veilmore — Covered by choice. Empowered by faith.</title>
+<meta name="description" content="Veilmore adalah brand modest fashion Indonesia. Abaya, Outer, dan Abaia yang dirancang untuk modern Muslim woman dengan keanggunan dan kenyamanan.">
+<!-- Local fonts - self-hosted for performance & offline support -->
 <style>
-  :root{
-    --bg:#f5f0e8;
-    --surface:#ede5d8;
-    --ink:#2b2420;
-    --ink-soft:#4a4038;
-    --muted:#8a7f72;
-    --line:#d9cfc0;
-    --accent:#a6774f;
-    --accent-deep:#7c5433;
-    --cream:#faf7f1;
-    --serif:'Cormorant Garamond', Georgia, serif;
-    --sans:'Jost', 'Segoe UI', sans-serif;
+  /* Lora - Serif */
+  @font-face {
+    font-family: 'Lora';
+    src: url('assets/fonts/Lora-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
   }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:var(--sans);
-    font-weight:300;
-    line-height:1.7;
-    -webkit-font-smoothing:antialiased;
+  @font-face {
+    font-family: 'Lora';
+    src: url('assets/fonts/Lora-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
   }
-  a{color:inherit;text-decoration:none}
-  img{display:block;max-width:100%}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,56px)}
-  ::selection{background:var(--accent);color:var(--cream)}
-
-  /* ---------- Nav ---------- */
-  header{
-    position:sticky;top:0;z-index:50;
-    background:rgba(245,240,232,.92);
-    backdrop-filter:saturate(140%) blur(6px);
-    border-bottom:1px solid var(--line);
+  @font-face {
+    font-family: 'Lora';
+    src: url('assets/fonts/Lora-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
   }
-  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-  .brand{font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.06em}
-  .brand em{font-style:normal;color:var(--accent)}
-  nav ul{display:flex;gap:34px;list-style:none}
-  nav a{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);transition:color .2s}
-  nav a:hover,nav a:focus-visible{color:var(--accent-deep)}
-  .cta-nav{
-    border:1px solid var(--ink);padding:10px 22px;font-size:12px;letter-spacing:.18em;
-    text-transform:uppercase;transition:.25s;
+  @font-face {
+    font-family: 'Lora';
+    src: url('assets/fonts/Lora-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
   }
-  .cta-nav:hover{background:var(--ink);color:var(--cream)}
-  .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
-  .menu-btn span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0}
-
-  /* ---------- Hero ---------- */
-  .hero{padding:clamp(48px,8vw,96px) 0 clamp(40px,7vw,80px)}
-  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,6vw,72px);align-items:center}
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:12px;
-    font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-deep);
-    margin-bottom:26px;
+  @font-face {
+    font-family: 'Lora';
+    src: url('assets/fonts/Lora-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
   }
-  .eyebrow::before{content:"";width:38px;height:1px;background:var(--accent)}
-  h1{
-    font-family:var(--serif);font-weight:400;
-    font-size:clamp(44px,6.5vw,84px);
-    line-height:1.04;letter-spacing:-.01em;
+  @font-face {
+    font-family: 'Lora';
+    src: url('assets/fonts/Lora-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
   }
-  h1 .it{font-style:italic;color:var(--accent-deep)}
-  .lede{margin-top:26px;max-width:46ch;color:var(--ink-soft);font-size:17px}
-  .hero-actions{margin-top:38px;display:flex;gap:16px;flex-wrap:wrap}
-  .btn{
-    display:inline-block;padding:15px 32px;font-size:13px;letter-spacing:.16em;
-    text-transform:uppercase;transition:.25s;border:1px solid transparent;min-height:48px;
+  @font-face {
+    font-family: 'Lora';
+    src: url('assets/fonts/Lora-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
   }
-  .btn-solid{background:var(--ink);color:var(--cream)}
-  .btn-solid:hover{background:var(--accent-deep)}
-  .btn-ghost{border-color:var(--ink);color:var(--ink)}
-  .btn-ghost:hover{background:var(--ink);color:var(--cream)}
-  .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-
-  .hero-visual{position:relative}
-  .fabric{
-    aspect-ratio:4/5;width:100%;
-    background:
-      radial-gradient(120% 90% at 20% 10%, #d9bfa4 0%, transparent 55%),
-      radial-gradient(110% 100% at 85% 90%, #b98a5e 0%, transparent 60%),
-      linear-gradient(160deg,#c9a887 0%,#a6774f 55%,#7c5433 100%);
-    box-shadow:0 30px 60px -28px rgba(43,36,32,.45);
+  @font-face {
+    font-family: 'Lora';
+    src: url('assets/fonts/Lora-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
   }
-  .fabric::after{
-    content:"";position:absolute;inset:0;
-    background:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 9px);
-    mix-blend-mode:overlay;
+  
+  /* DM Sans - Sans-serif */
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('assets/fonts/DMSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
   }
-  .hero-tag{
-    position:absolute;left:-18px;bottom:26px;background:var(--cream);
-    padding:14px 20px;border:1px solid var(--line);font-family:var(--serif);
-    font-size:19px;font-style:italic;color:var(--ink-soft);
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('assets/fonts/DMSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
   }
-
-  /* ---------- Marquee strip ---------- */
-  .strip{border-block:1px solid var(--line);background:var(--surface);overflow:hidden}
-  .strip-inner{display:flex;gap:0;white-space:nowrap;padding:16px 0}
-  .strip span{
-    font-family:var(--serif);font-size:18px;font-style:italic;color:var(--accent-deep);
-    padding:0 28px;display:inline-flex;align-items:center;gap:28px;
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('assets/fonts/DMSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
   }
-  .strip span::after{content:"\2022";color:var(--muted);font-size:12px}
-
-  /* ---------- Ethos ---------- */
-  .ethos{padding:clamp(64px,10vw,120px) 0}
-  .ethos-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,90px)}
-  .section-label{
-    font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);
-    margin-bottom:20px;display:block;
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('assets/fonts/DMSans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
   }
-  h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4.5vw,54px);line-height:1.12}
-  h2 .it{font-style:italic;color:var(--accent-deep)}
-  .ethos-copy p{color:var(--ink-soft);margin-bottom:20px;font-size:16.5px}
-  .ethos-copy p:first-of-type::first-letter{
-    font-family:var(--serif);font-size:58px;line-height:.8;float:left;
-    padding-right:10px;padding-top:6px;color:var(--accent-deep);
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('assets/fonts/DMSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
   }
-  .values{margin-top:34px;display:grid;gap:18px}
-  .value{display:flex;gap:18px;align-items:baseline;border-top:1px solid var(--line);padding-top:18px}
-  .value b{font-family:var(--serif);font-size:22px;font-weight:500;min-width:150px;color:var(--ink)}
-  .value p{color:var(--muted);font-size:15px;margin:0}
-
-  /* ---------- Collections ---------- */
-  .collections{background:var(--cream);padding:clamp(64px,10vw,120px) 0;border-block:1px solid var(--line)}
-  .col-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:52px;flex-wrap:wrap}
-  .col-head p{max-width:40ch;color:var(--muted);font-size:15px}
-  .col-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:26px}
-  .card{position:relative;overflow:hidden;background:var(--surface)}
-  .card .ph{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
-  .card:hover .ph{transform:scale(1.04)}
-  .ph{width:100%;position:relative}
-  .ph::after{
-    content:"";position:absolute;inset:0;
-    background:repeating-linear-gradient(105deg,rgba(255,255,255,.04) 0 2px,transparent 2px 10px);
+</style>
+<style>
+  :root {
+    /* Brand Colors from Deck */
+    --maroon: #382522;
+    --maroon-light: #4a3532;
+    --olive: #4A4E3D;
+    --espresso: #6E5B4B;
+    --warm-sand: #8B7355;
+    --slate: #4A5868;
+    --off-white: #FBFAF5;
+    --cream: #F5F1E8;
+    --ink: #2A2420;
+    --ink-soft: #5a5248;
+    --ink-dark: #1a1614;
+    --border: #e8dfd2;
+    --error: #c33;
+    
+    /* Brand Gradient */
+    --gradient-hero: linear-gradient(135deg, #4A3532 0%, #6E5B4B 50%, #8B7355 100%);
+    
+    /* Typography */
+    --serif: 'Lora', Georgia, serif;
+    --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Spacing */
+    --nav-height: 72px;
+    --container: 1320px;
+    --gutter: clamp(20px, 4vw, 48px);
   }
-  .ph-1{aspect-ratio:3/4;background:linear-gradient(150deg,#8f6b4a,#5c4028 70%)}
-  .ph-2{aspect-ratio:3/4;background:linear-gradient(150deg,#c3a284,#8a6844 70%)}
-  .ph-3{aspect-ratio:3/4;background:linear-gradient(150deg,#6f5a49,#3f2f22 70%)}
-  .card-info{padding:22px 4px 6px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
-  .card-info h3{font-family:var(--serif);font-size:26px;font-weight:500}
-  .card-info .cnt{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-  .card-info .desc{width:100%;color:var(--muted);font-size:14.5px;margin-top:6px}
-  .c-1{grid-column:span 5}
-  .c-2{grid-column:span 4;margin-top:56px}
-  .c-3{grid-column:span 3;margin-top:110px}
-  .card .link{
-    display:inline-flex;align-items:center;gap:10px;margin-top:16px;
-    font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  .card .link::after{content:"\2192";transition:transform .25s}
-  .card:hover .link::after{transform:translateX(5px)}
-
-  /* ---------- Quote ---------- */
-  .quote{padding:clamp(72px,11vw,140px) 0;text-align:center}
-  .quote blockquote{
-    font-family:var(--serif);font-style:italic;font-weight:400;
-    font-size:clamp(26px,4vw,44px);line-height:1.3;max-width:24ch;margin:0 auto;
+  
+  html {
+    scroll-behavior: smooth;
   }
-  .quote blockquote b{color:var(--accent-deep);font-weight:500}
-  .quote cite{display:block;margin-top:26px;font-style:normal;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
-
-  /* ---------- CTA ---------- */
-  .cta{background:var(--ink);color:var(--cream);padding:clamp(64px,9vw,110px) 0}
-  .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,72px);align-items:center}
-  .cta h2{color:var(--cream)}
-  .cta p{color:#cbbfae;margin-top:18px;max-width:44ch}
-  .newsletter{display:flex;gap:0;max-width:460px}
-  .newsletter input{
-    flex:1;background:transparent;border:1px solid #6f6152;border-right:0;
-    padding:15px 18px;color:var(--cream);font-family:var(--sans);font-size:15px;min-height:52px;
+  
+  body {
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--off-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.01em;
   }
-  .newsletter input::placeholder{color:#9a8b78}
-  .newsletter input:focus{outline:2px solid var(--accent);outline-offset:-2px}
-  .newsletter button{
-    background:var(--accent);color:#fff;border:0;padding:0 28px;cursor:pointer;
-    font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-family:var(--sans);transition:background .25s;min-height:52px;
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
   }
-  .newsletter button:hover{background:var(--accent-deep)}
-  .cta-note{margin-top:14px;font-size:13px;color:#9a8b78}
-
-  /* ---------- Footer ---------- */
-  footer{background:var(--ink);color:#9a8b78;border-top:1px solid #4a4038;padding:44px 0}
-  .foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-  .foot .brand{color:var(--cream);font-size:22px}
-  .foot-links{display:flex;gap:26px;list-style:none}
-  .foot-links a{font-size:13px;letter-spacing:.08em;transition:color .2s}
-  .foot-links a:hover{color:var(--cream)}
-  .copy{font-size:13px}
-
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-  .reveal.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){
-    .reveal{opacity:1;transform:none;transition:none}
-    html{scroll-behavior:auto}
-    .card .ph{transition:none}
+  
+  a {
+    color: inherit;
+    text-decoration: none;
   }
-
-  /* ---------- Responsive ---------- */
-  @@media (max-width:900px){
-    .hero-grid,.ethos-grid,.cta-grid{grid-template-columns:1fr}
-    .hero-visual{order:-1;max-width:440px}
-    .c-1,.c-2,.c-3{grid-column:span 12;margin-top:0}
-    nav ul{display:none}
-    .menu-btn{display:block}
-    nav.open ul{
-      display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;
-      background:var(--cream);padding:24px;gap:20px;border-bottom:1px solid var(--line);
+  
+  button {
+    font-family: inherit;
+    cursor: pointer;
+  }
+  
+  ::selection {
+    background: var(--espresso);
+    color: var(--off-white);
+  }
+  
+  /* ========================================
+     ANIMATIONS & TRANSITIONS
+     ======================================== */
+  
+  /* Scroll-triggered reveals */
+  .fade-in,
+  .fade-up,
+  .scale-in {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  .fade-in {
+    transform: translateY(0);
+  }
+  
+  .fade-up {
+    transform: translateY(30px);
+  }
+  
+  .scale-in {
+    transform: scale(0.95);
+  }
+  
+  .fade-in.visible,
+  .fade-up.visible,
+  .scale-in.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  
+  /* Hero entrance animations */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .hero-eyebrow {
+    animation: fadeUp 0.6s 0.2s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+  
+  .hero h1 {
+    animation: fadeUp 0.8s 0.4s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+  
+  .hero p {
+    animation: fadeUp 0.6s 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+  
+  .hero-cta {
+    animation: fadeUp 0.7s 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+  
+  /* Page load fade-in */
+  body {
+    animation: fadeIn 0.4s ease-out;
+  }
+  
+  /* Reduced motion accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    
+    .fade-in,
+    .fade-up,
+    .scale-in {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+  
+  /* Container */
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  
+  /* Announcement Bar */
+  .announcement {
+    background: var(--gradient-hero);
+    color: var(--off-white);
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+  
+  /* Header */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: transparent;
+    backdrop-filter: none;
+    border-bottom: 1px solid transparent;
+    height: var(--nav-height);
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+  
+  header.scrolled {
+    background: var(--gradient-hero);
+    backdrop-filter: blur(8px);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 56px;
+    height: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+  }
+  
+  .logo {
+    display: block;
+    width: 140px;
+    height: auto;
+    flex-shrink: 0;
+    padding-left: 0;
+    margin-left: 0;
+  }
+  
+  .logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  nav {
+    flex: 1;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    align-items: center;
+  }
+  
+  @media (max-width: 768px) {
+    nav ul {
+      display: none;
+    }
+  }
+  
+  nav a {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    color: var(--off-white);
+    transition: all 0.3s;
+    text-transform: none;
+    position: relative;
+  }
+  
+  header.scrolled nav a {
+    color: var(--ink);
+  }
+  
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s ease;
+  }
+  
+  nav a:hover::after {
+    width: 100%;
+  }
+  
+  nav a:hover {
+    color: var(--cream);
+  }
+  
+  header.scrolled nav a:hover {
+    color: var(--maroon);
+  }
+  
+  .nav-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-left: auto;
+  }
+  
+  .search-btn,
+  .cart-btn {
+    background: none;
+    border: 0;
+    padding: 8px;
+    color: var(--off-white);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    position: relative;
+  }
+  
+  header.scrolled .search-btn,
+  header.scrolled .cart-btn {
+    color: var(--ink);
+  }
+  
+  .search-btn svg,
+  .cart-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    fill: none;
+  }
+  
+  .search-btn:hover,
+  .cart-btn:hover {
+    color: var(--cream);
+  }
+  
+  header.scrolled .search-btn:hover,
+  header.scrolled .cart-btn:hover {
+    color: var(--maroon);
+  }
+  
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: 0;
+    padding: 8px;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 105;
+  }
+  
+  .mobile-menu-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--off-white);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  
+  header.scrolled .mobile-menu-btn span {
+    background: var(--ink);
+  }
+  
+  .mobile-menu-btn[aria-expanded="true"] span:nth-child(1) {
+    transform: rotate(45deg) translateY(7px);
+  }
+  
+  .mobile-menu-btn[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .mobile-menu-btn[aria-expanded="true"] span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-7px);
+  }
+  
+  /* Mobile Menu Overlay */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--off-white);
+    z-index: 101;
+    padding: 100px 32px 32px;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -8px 0 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mobile-menu.active {
+    right: 0;
+  }
+  
+  .mobile-menu nav ul {
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  
+  .mobile-menu nav a {
+    font-size: 20px;
+    color: var(--ink);
+  }
+  
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  
+  .mobile-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /* Hero */
+  .hero {
+    position: relative;
+    height: clamp(600px, 85vh, 800px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-hero);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 var(--gutter);
+    transform: translateY(-8%);
+  }
+  
+  .hero-eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--off-white);
+  }
+  
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(48px, 8vw, 88px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+    color: var(--off-white);
+  }
+  
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--off-white);
+  }
+  
+  .hero-cta {
+    display: inline-block;
+    background: rgba(251, 250, 245, 0.15);
+    color: var(--off-white);
+    padding: 18px 36px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid var(--off-white);
+    border-radius: 2px;
+    position: relative;
+    overflow: visible;
+  }
+  
+  .hero-cta::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--off-white);
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hero-cta::before {
+    content: '→';
+    position: absolute;
+    right: -28px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-10px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 18px;
+  }
+  
+  .hero-cta:hover::after {
+    transform: scaleX(1.15);
+    transform-origin: left;
+  }
+  
+  .hero-cta:hover::before {
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+  }
+  
+  .hero-cta:hover {
+    padding-right: 32px;
+    letter-spacing: 2px;
+  }
+  
+  /* Section Utilities */
+  .section {
+    padding: clamp(60px, 10vw, 120px) 0;
+  }
+  
+  .section-sm {
+    padding: clamp(40px, 7vw, 80px) 0;
+  }
+  
+  .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 64px;
+  }
+  
+  .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--espresso);
+    margin-bottom: 16px;
+  }
+  
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--maroon);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+  
+  .section-desc {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    font-weight: 300;
+  }
+  
+  /* Lookbook / Product Grid */
+  .lookbook {
+    background: var(--cream);
+  }
+  
+  .lookbook .container {
+    padding-top: clamp(32px, 5vw, 64px);
+  }
+  
+  .lookbook-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 48px;
+  }
+  
+  .lookbook-title {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4.5vw, 48px);
+    font-weight: 600;
+    color: var(--maroon);
+  }
+  
+  .lookbook-link {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    transition: color 0.2s;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+  }
+  
+  .lookbook-link:hover {
+    color: var(--maroon);
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+  }
+  
+  .product-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--off-white);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  }
+  
+  .product-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  .product-image {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    background: var(--cream);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  .product-card:hover .product-image img {
+    transform: scale(1.08);
+  }
+  
+  .product-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(251, 250, 245, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 6px 14px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--maroon);
+    z-index: 2;
+  }
+  
+  .product-info {
+    padding: 20px 0;
+  }
+  
+  .product-category {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  
+  .product-name {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--maroon);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  
+  .product-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+    font-weight: 300;
+  }
+  
+  .product-cta {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--maroon);
+    border-bottom: 1px solid var(--maroon);
+    padding-bottom: 2px;
+    display: inline-block;
+    transition: opacity 0.2s;
+  }
+  
+  .product-cta:hover {
+    opacity: 0.7;
+  }
+  
+  /* Feature Split */
+  .feature {
+    background: var(--off-white);
+  }
+  
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(40px, 8vw, 100px);
+    align-items: center;
+  }
+  
+  .feature-image {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background: var(--cream);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .feature-content .section-eyebrow {
+    text-align: left;
+  }
+  
+  .feature-content .section-title {
+    text-align: left;
+    margin-bottom: 24px;
+  }
+  
+  .feature-content p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+  
+  .feature-list {
+    list-style: none;
+    margin: 32px 0;
+  }
+  
+  .feature-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 16px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  
+  .feature-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--maroon);
+    font-weight: 700;
+    font-size: 16px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 14px 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 0;
+    margin-top: 12px;
+    position: relative;
+    overflow: visible;
+    background: transparent;
+  }
+  
+  .btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .btn::before {
+    content: '→';
+    position: absolute;
+    right: -24px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-8px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 16px;
+  }
+  
+  .btn-primary {
+    background: var(--gradient-hero);
+    color: var(--off-white);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.3s ease,
+                background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #3d2e2a 0%, #5d4d3f 50%, #7a6449 100%);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(74, 53, 50, 0.35);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 6px 16px rgba(56, 37, 34, 0.25);
+  }
+  
+  .btn-primary:hover::after {
+    transform: scaleX(1.15);
+  }
+  
+  .btn-primary:hover::before {
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+  }
+  
+  /* Category Grid */
+  .categories {
+    background: var(--cream);
+  }
+  
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  
+  .category-card {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s ease;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  .category-card:hover .category-bg img {
+    transform: scale(1.05);
+  }
+  
+  .category-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .category-bg {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .category-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  .category-card:hover .category-bg {
+    transform: scale(1.08);
+  }
+  
+  .category-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+  }
+  
+  .category-content {
+    position: relative;
+    z-index: 2;
+    padding: 32px;
+    color: var(--off-white);
+    width: 100%;
+  }
+  
+  .category-name {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  
+  .category-count {
+    font-size: 13px;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    font-weight: 500;
+  }
+  
+  /* Category new classes (for .category-info wrapper) */
+  .category-info {
+    position: relative;
+    z-index: 3;
+    padding: 32px;
+  }
+  
+  .category-title {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--off-white);
+    margin-bottom: 8px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  
+  /* Story Section */
+  .story {
+    background: var(--off-white);
+  }
+  
+  .story-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(40px, 8vw, 100px);
+    align-items: center;
+  }
+  
+  .story-image {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .story-content p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    font-weight: 300;
+  }
+  
+  .story-content p:first-of-type {
+    font-size: 19px;
+    color: var(--ink);
+  }
+  
+  .story-signature {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+  
+  .story-signature-name {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-style: italic;
+    color: var(--maroon);
+    margin-bottom: 4px;
+  }
+  
+  .story-signature-title {
+    font-size: 13px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  
+  /* Newsletter */
+  .newsletter {
+    background: var(--gradient-hero);
+    padding: 120px 0;
+  }
+  
+  .newsletter-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .newsletter h2 {
+    font-family: var(--serif);
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--off-white);
+  }
+  
+  .newsletter p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    font-weight: 300;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    gap: 0;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  
+  .newsletter-form input {
+    flex: 1;
+    padding: 18px 24px;
+    font-family: var(--sans);
+    font-size: 15px;
+    border: 2px solid rgba(251, 250, 245, 0.2);
+    border-right: 0;
+    background: rgba(251, 250, 245, 0.1);
+    color: var(--off-white);
+    outline: none;
+    transition: all 0.3s;
+  }
+  
+  .newsletter-form input.error {
+    border-color: var(--error);
+    border-right: 2px solid var(--error);
+  }
+  
+  .newsletter-form input::placeholder {
+    color: rgba(251, 250, 245, 0.5);
+  }
+  
+  .newsletter-form input:focus {
+    background: rgba(251, 250, 245, 0.15);
+    border-color: rgba(251, 250, 245, 0.4);
+  }
+  
+  .newsletter-form button {
+    padding: 18px 36px;
+    background: var(--off-white);
+    color: var(--maroon);
+    border: 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  
+  .newsletter-form button:hover {
+    background: var(--cream);
+    transform: translateX(4px);
+  }
+  
+  .newsletter-note {
+    margin-top: 20px;
+    font-size: 13px;
+    opacity: 0.75;
+    transition: opacity 0.3s;
+  }
+  
+  .newsletter-note.success {
+    opacity: 1;
+    color: var(--cream);
+  }
+  
+  .newsletter-note.error {
+    opacity: 1;
+    color: #ffaaaa;
+  }
+  
+  /* Instagram Feed */
+  .instagram-feed {
+    background: var(--off-white);
+    padding: 80px 0;
+  }
+  
+  .instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 0;
+  }
+  
+  .instagram-item {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 4px;
+    display: block;
+  }
+  
+  .instagram-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  
+  .instagram-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(56, 37, 34, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .instagram-icon {
+    font-size: 32px;
+  }
+  
+  .instagram-item:hover .instagram-overlay {
+    opacity: 1;
+  }
+  
+  .instagram-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .instagram-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+  }
+  
+  /* Collection Highlights */
+  .collection-highlights {
+    background: var(--off-white);
+    padding: 80px 0;
+  }
+  
+  .collection-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  
+  .collection-highlight-card {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    border-radius: 8px;
+    display: block;
+  }
+  
+  .collection-highlight-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  
+  .collection-highlight-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 32px;
+  }
+  
+  .collection-highlight-content h3 {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--off-white);
+    margin-bottom: 8px;
+  }
+  
+  .collection-highlight-content p {
+    color: var(--off-white);
+    opacity: 0.9;
+    font-size: 14px;
+  }
+  
+  .collection-highlight-card:hover img {
+    transform: scale(1.08);
+  }
+  
+  @media (max-width: 768px) {
+    .collection-highlight-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+  
+  /* Footer */
+  footer {
+    background: var(--gradient-hero);
+    color: var(--off-white);
+    padding: 80px 0 32px;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: 48px;
+    margin-bottom: 64px;
+  }
+  
+  .footer-brand .logo {
+    width: 160px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-brand p {
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 320px;
+    font-weight: 300;
+  }
+  
+  .footer-col h4 {
+    color: var(--off-white);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  
+  .footer-col ul {
+    list-style: none;
+  }
+  
+  .footer-col li {
+    margin-bottom: 14px;
+  }
+  
+  .footer-col a {
+    font-size: 14px;
+    transition: color 0.2s;
+    font-weight: 300;
+  }
+  
+  .footer-col a:hover {
+    color: var(--off-white);
+  }
+  
+  .footer-bottom {
+    padding-top: 32px;
+    border-top: 1px solid rgba(251, 250, 245, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+  }
+  
+  .footer-social {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-social a {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(251, 250, 245, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s;
+  }
+  
+  .footer-social a:hover {
+    background: var(--off-white);
+    color: var(--ink);
+    border-color: var(--off-white);
+  }
+  
+  /* Animations */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Staggered Animation Variants */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Smooth hover lift for all cards */
+  .product-card,
+  .category-card {
+    will-change: transform;
+  }
+  
+  /* Page load animation */
+  body {
+    animation: pageLoad 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  @keyframes pageLoad {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Hero content entrance - FIXED */
+  .hero-eyebrow {
+    opacity: 1;
+    animation: heroEnter 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+  }
+  
+  .hero h1 {
+    opacity: 1;
+    animation: heroEnter 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+  }
+  
+  .hero-cta {
+    opacity: 1;
+    animation: heroEnter 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+  }
+  
+  @keyframes heroEnter {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Button press effect */
+  button:active,
+  .btn:active,
+  .hero-cta:active {
+    transform: scale(0.97);
+  }
+  
+  /* Smooth focus states */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible {
+    outline: 2px solid var(--maroon);
+    outline-offset: 4px;
+    transition: outline-offset 0.2s ease;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .feature-grid,
+    .story-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    
+    .story-grid {
+      direction: rtl;
+    }
+    
+    .story-grid > * {
+      direction: ltr;
+    }
+    
+    .category-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    nav ul {
+      display: none;
+    }
+    
+    .mobile-menu-btn {
+      display: flex;
+    }
+    
+    .product-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    
+    .lookbook-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    
+    .newsletter-form {
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .newsletter-form input {
+      border-right: 2px solid rgba(251, 250, 245, 0.2);
+    }
+    
+    .newsletter-form input.error {
+      border-right: 2px solid var(--error);
+    }
+    
+    .newsletter-form button {
+      width: 100%;
+    }
+    
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    
+    .footer-bottom {
+      flex-direction: column;
+      gap: 24px;
+      text-align: center;
     }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap nav">
-    <a href="#" class="brand">Veil<em>more</em></a>
-    <nav id="mainNav" aria-label="Navigasi utama">
+<!-- Mobile Menu Overlay -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav aria-label="Mobile navigation">
+    <ul>
+      <li><a href="#new">New In</a></li>
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+
+<!-- Header -->
+<header id="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <img src="assets/images/logo-white.png" alt="Veilmore" width="140" height="32">
+    </a>
+    
+    <nav aria-label="Main navigation">
       <ul>
-        <li><a href="#ethos">Tentang</a></li>
-        <li><a href="#collections">Koleksi</a></li>
-        <li><a href="#quote">Filosofi</a></li>
-        <li><a href="#contact">Kontak</a></li>
+        <li><a href="#new">New In</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <a href="#collections" class="cta-nav">Lihat Koleksi</a>
-    <button class="menu-btn" aria-label="Buka menu" aria-expanded="false" onclick="toggleMenu(this)">
-      <span></span><span></span><span></span>
-    </button>
+    
+    <div class="nav-actions">
+      <button class="search-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
+      <button class="cart-btn" aria-label="Cart">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+      </button>
+      <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false" id="mobileMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </div>
 </header>
 
+<!-- Hero -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="reveal">
-      <span class="eyebrow">Modest Fashion Indonesia</span>
-      <h1>Keanggunan yang <span class="it">menutupi,</span><br>percaya diri yang <span class="it">memancar.</span></h1>
-      <p class="lede">Veilmore merancang Abaya, Outer, dan Abaia untuk perempuan Indonesia yang ingin tampil anggun tanpa kompromi — nyaman dipakai seharian, mudah dipadupadankan, dan dibuat untuk menemani setiap langkahmu.</p>
-      <div class="hero-actions">
-        <a href="#collections" class="btn btn-solid">Jelajahi Koleksi</a>
-        <a href="#ethos" class="btn btn-ghost">Cerita Kami</a>
-      </div>
-    </div>
-    <div class="hero-visual reveal" aria-hidden="true">
-      <div class="fabric"></div>
-      <div class="hero-tag">Dirancang dengan niat baik.</div>
-    </div>
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Modest Fashion Indonesia</p>
+    <h1>Covered by choice.<br><em>Empowered by faith.</em></h1>
+    <a href="#collections" class="hero-cta">Explore Collection</a>
   </div>
 </section>
 
-<div class="strip" aria-hidden="true">
-  <div class="strip-inner">
-    <span>Abaya</span><span>Outer</span><span>Abaia</span><span>Bahan terpilih</span><span>Jahitan rapi</span><span> Nyaman seharian</span>
-  </div>
-</div>
-
-<section class="ethos" id="ethos">
-  <div class="wrap ethos-grid">
-    <div class="reveal">
-      <span class="section-label">Tentang Veilmore</span>
-      <h2>Modest bukan berarti <span class="it">sederhana.</span></h2>
+<!-- Lookbook - New Arrivals -->
+<section class="lookbook section" id="new">
+  <div class="container">
+    <div class="lookbook-header fade-in">
+      <h2 class="lookbook-title">New Arrivals</h2>
+      <a href="#collections" class="lookbook-link">View Collection →</a>
     </div>
-    <div class="ethos-copy reveal">
-      <p>Kami percaya busana tertutup adalah bentuk ekspresi, bukan pembatas. Setiap potongan Veilmore lahir dari perhatian pada detail — siluet yang mengalir, bahan yang sejuk di iklim tropis, dan warna-warna hangat yang mudah menyatu dengan lemari yang sudah kamu punya.</p>
-      <p>Veilmore dibangun untuk perempuan yang menghargai kualitas sekaligus makna. Kami memilih bahan dengan cermat, menjahit dengan teliti, dan merancang agar setiap pieces bisa dikenakan berulang kali, musim demi musim.</p>
-      <div class="values">
-        <div class="value"><b>Anggun</b><p>Siluet mengalir yang menghormati sekaligus mempercantik.</p></div>
-        <div class="value"><b>Nyaman</b><p>Bahan breathable yang cocok untuk cuaca Indonesia.</p></div>
-        <div class="value"><b>Bermakna</b><p>Dirancang untuk dikenakan lama, bukan sekali pakai.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="collections" id="collections">
-  <div class="wrap">
-    <div class="col-head reveal">
-      <div>
-        <span class="section-label">Koleksi Kami</span>
-        <h2>Tiga potongan, <span class="it">satu gaya.</span></h2>
-      </div>
-      <p>Setiap kategori dirancang untuk saling melengkapi — kenakan sendiri atau padukan menjadi satu tampilan utuh.</p>
-    </div>
-    <div class="col-grid">
-      <article class="card c-1 reveal">
-        <div class="ph ph-1" aria-hidden="true"></div>
-        <div class="card-info">
-          <div>
-            <h3>Abaya</h3>
-            <p class="desc">Gamis panjang dengan potongan bersih dan bahan jatuh yang anggun.</p>
-            <span class="link">Lihat Abaya</span>
-          </div>
-          <span class="cnt">Coming soon</span>
+    
+    <div class="product-grid">
+      <article class="product-card scale-in">
+        <div class="product-image">
+          <img src="assets/images/product-dummy.png" alt="The Maroon Statement" loading="lazy">
+          <span class="product-badge">New</span>
+        </div>
+        <div class="product-info">
+          <p class="product-category">Abaya</p>
+          <h3 class="product-name">The Maroon Statement</h3>
+          <p class="product-desc">Formal abaya with structured cut and tailored details for special moments.</p>
+          <a href="product-maroon-statement.html" class="product-cta">View Details →</a>
         </div>
       </article>
-      <article class="card c-2 reveal">
-        <div class="ph ph-2" aria-hidden="true"></div>
-        <div class="card-info">
-          <div>
-            <h3>Outer</h3>
-            <p class="desc">Lapisan luar yang mudah dipadukan untuk tampilan sehari-hari.</p>
-            <span class="link">Lihat Outer</span>
-          </div>
-          <span class="cnt">Coming soon</span>
+      
+      <article class="product-card scale-in">
+        <div class="product-image">
+          <img src="assets/images/product-dummy.png" alt="The Earth Layer" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-category">Outer</p>
+          <h3 class="product-name">The Earth Layer</h3>
+          <p class="product-desc">Organic earth-tone outer, perfect for daily wear and outdoor shoots.</p>
+          <a href="product-earth-layer.html" class="product-cta">View Details →</a>
         </div>
       </article>
-      <article class="card c-3 reveal">
-        <div class="ph ph-3" aria-hidden="true"></div>
-        <div class="card-info">
-          <div>
-            <h3>Abaia</h3>
-            <p class="desc">Sentuhan khas untuk momen istimewa.</p>
-            <span class="link">Lihat Abaia</span>
-          </div>
-          <span class="cnt">Coming soon</span>
+      
+      <article class="product-card scale-in">
+        <div class="product-image">
+          <img src="assets/images/product-dummy.png" alt="The Neutral Essential" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-category">Abaia</p>
+          <h3 class="product-name">The Neutral Essential</h3>
+          <p class="product-desc">Warm taupe that pairs effortlessly, a favorite for modern minimalist style.</p>
+          <a href="product-neutral-essential.html" class="product-cta">View Details →</a>
+        </div>
+      </article>
+      
+      <article class="product-card scale-in">
+        <div class="product-image">
+          <img src="assets/images/product-dummy.png" alt="The Daily Demure" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-category">Outer</p>
+          <h3 class="product-name">The Daily Demure</h3>
+          <p class="product-desc">Subtle blue-grey for daily wear that's comfortable and understated.</p>
+          <a href="product-daily-demure.html" class="product-cta">View Details →</a>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<section class="quote" id="quote">
-  <div class="wrap reveal">
-    <blockquote>“Busana terbaik adalah yang membuatmu merasa <b>menjadi diri sendiri</b> — tanpa harus menjelaskan siapa dirimu.”</blockquote>
-    <cite>— Filosofi Veilmore</cite>
+<!-- Feature - Collection Highlight -->
+<section class="feature section">
+  <div class="container">
+    <div class="feature-grid">
+      <div class="feature-image fade-in">
+        <img src="assets/images/product-dummy.png" alt="Fall/Winter 2026 Collection" loading="lazy">
+      </div>
+      <div class="feature-content fade-in">
+        <p class="section-eyebrow">Fall/Winter 2026</p>
+        <h2 class="section-title">For women who choose to be covered with confidence</h2>
+        <p>Every Veilmore piece is designed with a deep understanding of modern Muslim women's lives—from morning meetings to evening events, from daily routines to special moments.</p>
+        <p>We don't just make clothing. We create garments that honor choice, celebrate identity, and empower your journey.</p>
+        
+        <ul class="feature-list">
+          <li>Premium breathable fabrics for Indonesia's climate</li>
+          <li>Timeless cuts that never go out of style</li>
+          <li>Curated colors that mix and match effortlessly</li>
+          <li>Tailored details with extra care</li>
+        </ul>
+        
+        <a href="#collections" class="btn btn-primary">Explore Collection</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="cta" id="contact">
-  <div class="wrap cta-grid">
-    <div class="reveal">
-      <h2>Jadi yang pertama tahu.</h2>
-      <p>Kami sedang mempersiapkan koleksi pertama Veilmore. Tinggalkan emailmu dan kami akan memberi tahu begitu koleksi siap diluncurkan.</p>
+<!-- Categories -->
+<section class="categories section" id="collections">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="section-eyebrow">Categories</p>
+      <h2 class="section-title">Three pieces, one story</h2>
+      <p class="section-desc">Each category is designed to complement the others—wear them solo or layer for a complete look.</p>
     </div>
-    <div class="reveal">
-      <form class="newsletter" onsubmit="return handleSubscribe(event)">
-        <label for="email" style="position:absolute;left:-9999px">Email kamu</label>
-        <input id="email" type="email" required placeholder="email@kamu.com" autocomplete="email" />
-        <button type="submit">Ingatkan Saya</button>
+    
+    <div class="category-grid">
+      <a href="products.html?category=abaya" class="category-card cat-1 fade-in">
+        <div class="category-bg">
+          <img src="assets/images/product-dummy.png" alt="Abaya Collection" loading="lazy">
+        </div>
+        <div class="category-overlay">
+          <div class="category-info">
+            <h3 class="category-title">Abaya Collection</h3>
+            <p class="category-count">Koleksi Formal</p>
+          </div>
+        </div>
+      </a>
+      
+      <a href="products.html?category=outer" class="category-card cat-2 fade-in">
+        <div class="category-bg">
+          <img src="assets/images/product-dummy.png" alt="Outer Collection" loading="lazy">
+        </div>
+        <div class="category-overlay">
+          <div class="category-info">
+            <h3 class="category-title">Outer Collection</h3>
+            <p class="category-count">Layer Serbaguna</p>
+          </div>
+        </div>
+      </a>
+      
+      <a href="products.html?category=abaia" class="category-card cat-3 fade-in">
+        <div class="category-bg">
+          <img src="assets/images/product-dummy.png" alt="Abaia Collection" loading="lazy">
+        </div>
+        <div class="category-overlay">
+          <div class="category-info">
+            <h3 class="category-title">Abaia Collection</h3>
+            <p class="category-count">Nyaman Sehari-hari</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Collection Highlights -->
+<section class="collection-highlights">
+  <div class="container">
+    <div class="section-header fade-in" style="text-align: center; margin-bottom: 48px;">
+      <p class="section-eyebrow">Shop by Style</p>
+      <h2 class="section-title">Find Your Perfect Piece</h2>
+    </div>
+    
+    <div class="collection-highlight-grid">
+      <a href="products.html?category=abaya" class="collection-highlight-card fade-in">
+        <img src="assets/images/product-dummy.png" alt="Shop Abayas" loading="lazy">
+        <div class="collection-highlight-overlay">
+          <div class="collection-highlight-content">
+            <h3>Shop Abayas</h3>
+            <p>Elegant pieces for formal moments</p>
+          </div>
+        </div>
+      </a>
+      
+      <a href="products.html?category=outer" class="collection-highlight-card fade-in">
+        <img src="assets/images/product-dummy.png" alt="Shop Outer" loading="lazy">
+        <div class="collection-highlight-overlay">
+          <div class="collection-highlight-content">
+            <h3>Shop Outer</h3>
+            <p>Versatile layers for everyday</p>
+          </div>
+        </div>
+      </a>
+      
+      <a href="products.html?category=abaia" class="collection-highlight-card fade-in">
+        <img src="assets/images/product-dummy.png" alt="Shop Abaia" loading="lazy">
+        <div class="collection-highlight-overlay">
+          <div class="collection-highlight-content">
+            <h3>Shop Abaia</h3>
+            <p>Comfortable styles for daily wear</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Bestsellers -->
+<section class="lookbook section-sm">
+  <div class="container">
+    <div class="lookbook-header fade-in">
+      <h2 class="lookbook-title">Community Favorites</h2>
+      <a href="#collections" class="lookbook-link">View Collection →</a>
+    </div>
+    
+    <div class="product-grid">
+      <article class="product-card fade-in">
+        <div class="product-image">
+          <img src="assets/images/product-dummy.png" alt="The Signature Maroon" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-category">Abaya</p>
+          <h3 class="product-name">The Signature Maroon</h3>
+          <p class="product-desc">Our bestseller. Elegant for every occasion.</p>
+          <a href="product-maroon-statement.html" class="product-cta">View Details →</a>
+        </div>
+      </article>
+      
+      <article class="product-card fade-in">
+        <div class="product-image">
+          <img src="assets/images/product-dummy.png" alt="The Everyday Neutral" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-category">Outer</p>
+          <h3 class="product-name">The Everyday Neutral</h3>
+          <p class="product-desc">Most repurchased. The perfect color.</p>
+          <a href="product-neutral-essential.html" class="product-cta">View Details →</a>
+        </div>
+      </article>
+      
+      <article class="product-card fade-in">
+        <div class="product-image">
+          <img src="assets/images/product-dummy.png" alt="The Olive Classic" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-category">Abaia</p>
+          <h3 class="product-name">The Olive Classic</h3>
+          <p class="product-desc">A favorite for outdoor shoots.</p>
+          <a href="product-earth-layer.html" class="product-cta">View Details →</a>
+        </div>
+      </article>
+      
+      <article class="product-card fade-in">
+        <div class="product-image">
+          <img src="assets/images/product-dummy.png" alt="The Soft Slate" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-category">Outer</p>
+          <h3 class="product-name">The Soft Slate</h3>
+          <p class="product-desc">Highest rated for everyday comfort.</p>
+          <a href="product-daily-demure.html" class="product-cta">View Details →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Story -->
+<section class="story section" id="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-image fade-in">
+        <img src="assets/images/product-dummy.png" alt="Veilmore Story" loading="lazy">
+      </div>
+      <div class="story-content fade-in">
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="section-title">It started with one simple question</h2>
+        <p>Why should modest clothing feel like a compromise? Why choose between modest and stylish, between comfort and elegance?</p>
+        <p>Veilmore was born from the belief that the decision to cover is empowerment, not limitation. Every design we create is a statement: that modest fashion can be as elegant, comfortable, and professional as any other garment.</p>
+        <p>We're not just a fashion brand. We're a companion on your journey—for women who know who they are, and choose to express it in meaningful ways.</p>
+        
+        <div class="story-signature">
+          <p class="story-signature-name">Veilmore Founding Team</p>
+          <p class="story-signature-title">Jakarta, Indonesia</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter section" id="contact">
+  <div class="container">
+    <div class="newsletter-inner fade-in">
+      <h2>Be the first to know</h2>
+      <p>Our inaugural collection is launching soon. Sign up for early access, exclusive offers, and stories behind each piece.</p>
+      
+      <form class="newsletter-form" id="newsletterForm" novalidate>
+        <input 
+          type="email" 
+          placeholder="nama@email.com" 
+          required 
+          aria-label="Email address"
+          id="newsletterEmail"
+        >
+        <button type="submit">Join Waitlist</button>
       </form>
-      <p class="cta-note" id="ctaNote">Tanpa spam. Hanya kabar peluncuran.</p>
+      
+      <p class="newsletter-note" id="newsletterNote">We respect your privacy. No spam, only meaningful updates.</p>
     </div>
   </div>
 </section>
 
+<!-- Instagram Feed -->
+<section class="instagram-feed section">
+  <div class="container">
+    <div class="section-header fade-in" style="text-align: center; margin-bottom: 48px;">
+      <p class="section-eyebrow">Follow Our Journey</p>
+      <h2 class="section-title">@veilmore.id</h2>
+      <p class="section-desc">Join our community on Instagram for daily inspiration, behind-the-scenes, and early previews.</p>
+    </div>
+    
+    <div class="instagram-grid">
+      <a href="https://instagram.com/veilmore.id" target="_blank" rel="noopener noreferrer" class="instagram-item fade-in">
+        <img src="assets/images/product-dummy.png" alt="Veilmore Instagram post 1" loading="lazy">
+        <div class="instagram-overlay">
+          <span class="instagram-icon">📷</span>
+        </div>
+      </a>
+      
+      <a href="https://instagram.com/veilmore.id" target="_blank" rel="noopener noreferrer" class="instagram-item fade-in">
+        <img src="assets/images/product-dummy.png" alt="Veilmore Instagram post 2" loading="lazy">
+        <div class="instagram-overlay">
+          <span class="instagram-icon">📷</span>
+        </div>
+      </a>
+      
+      <a href="https://instagram.com/veilmore.id" target="_blank" rel="noopener noreferrer" class="instagram-item fade-in">
+        <img src="assets/images/product-dummy.png" alt="Veilmore Instagram post 3" loading="lazy">
+        <div class="instagram-overlay">
+          <span class="instagram-icon">📷</span>
+        </div>
+      </a>
+      
+      <a href="https://instagram.com/veilmore.id" target="_blank" rel="noopener noreferrer" class="instagram-item fade-in">
+        <img src="assets/images/product-dummy.png" alt="Veilmore Instagram post 4" loading="lazy">
+        <div class="instagram-overlay">
+          <span class="instagram-icon">📷</span>
+        </div>
+      </a>
+      
+      <a href="https://instagram.com/veilmore.id" target="_blank" rel="noopener noreferrer" class="instagram-item fade-in">
+        <img src="assets/images/product-dummy.png" alt="Veilmore Instagram post 5" loading="lazy">
+        <div class="instagram-overlay">
+          <span class="instagram-icon">📷</span>
+        </div>
+      </a>
+      
+      <a href="https://instagram.com/veilmore.id" target="_blank" rel="noopener noreferrer" class="instagram-item fade-in">
+        <img src="assets/images/product-dummy.png" alt="Veilmore Instagram post 6" loading="lazy">
+        <div class="instagram-overlay">
+          <span class="instagram-icon">📷</span>
+        </div>
+      </a>
+    </div>
+    
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="https://instagram.com/veilmore.id" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        Follow @veilmore.id
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer>
-  <div class="wrap foot">
-    <span class="brand">Veil<em style="color:var(--accent)">more</em></span>
-    <ul class="foot-links">
-      <li><a href="#ethos">Tentang</a></li>
-      <li><a href="#collections">Koleksi</a></li>
-      <li><a href="#contact">Kontak</a></li>
-    </ul>
-    <span class="copy">&copy; 2026 Veilmore. Semua hak dilindungi.</span>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <img src="assets/images/logo-white.png" alt="Veilmore" width="160" height="36">
+        </a>
+        <p>Modest fashion Indonesia for modern Muslim women. Covered by choice, empowered by faith.</p>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#new">New In</a></li>
+          <li><a href="#collections">Abaya</a></li>
+          <li><a href="#collections">Outer</a></li>
+          <li><a href="#collections">Abaia</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 Veilmore. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/veilmore.id" target="_blank" rel="noopener noreferrer" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="WhatsApp (Coming Soon)" style="opacity: 0.5; cursor: not-allowed;">💬</a>
+      </div>
+    </div>
   </div>
 </footer>
 
 <script>
-  // Reveal on scroll
-  var els = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, {threshold:.12});
-    els.forEach(function(el){ io.observe(el); });
-  } else {
-    els.forEach(function(el){ el.classList.add('in'); });
+  // Email validation (lightweight, inspired by Just-validate pattern)
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
   }
-
-  // Mobile menu
-  function toggleMenu(btn){
-    var nav = document.getElementById('mainNav');
-    var open = nav.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  }
-
-  // Newsletter (placeholder — belum ada backend)
-  function handleSubscribe(e){
+  
+  // Newsletter form handler with proper validation
+  const newsletterForm = document.getElementById('newsletterForm');
+  const newsletterEmail = document.getElementById('newsletterEmail');
+  const newsletterNote = document.getElementById('newsletterNote');
+  
+  newsletterForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    var note = document.getElementById('ctaNote');
-    var email = document.getElementById('email').value;
-    note.textContent = 'Terima kasih! Kami akan menghubungi ' + email + ' saat peluncuran.';
-    document.getElementById('email').value = '';
-    return false;
+    
+    const email = newsletterEmail.value.trim();
+    
+    // Reset states
+    newsletterEmail.classList.remove('error');
+    newsletterNote.classList.remove('error', 'success');
+    
+    // Validate
+    if (!email) {
+      newsletterEmail.classList.add('error');
+      newsletterNote.textContent = 'Please enter your email address.';
+      newsletterNote.classList.add('error');
+      return;
+    }
+    
+    if (!validateEmail(email)) {
+      newsletterEmail.classList.add('error');
+      newsletterNote.textContent = 'Please enter a valid email address.';
+      newsletterNote.classList.add('error');
+      return;
+    }
+    
+    // Success state
+    newsletterNote.textContent = `Thank you! We'll reach out to ${email} when our collection is ready to launch. ✨`;
+    newsletterNote.classList.add('success');
+    
+    // Newsletter backend integration
+    const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbymZRALhWjPMFcHH4HTRZCeXy-F5YJLg1LzTQwPmbWbm5RTSihyNs8z2zaCQ1O8YdSfaQ/exec';
+    
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email,
+        source: 'homepage',
+        userAgent: navigator.userAgent
+      })
+    })
+    .then(() => {
+      console.log('Newsletter subscription sent:', email);
+    })
+    .catch(error => {
+      console.error('Newsletter error:', error);
+    });
+    
+    newsletterEmail.value = '';
+  });
+  
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+  
+  function toggleMobileMenu() {
+    const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+    
+    mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+    mobileMenu.classList.toggle('active');
+    mobileOverlay.classList.toggle('active');
+    
+    // Prevent body scroll when menu open
+    document.body.style.overflow = !isExpanded ? 'hidden' : '';
   }
+  
+  mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+  mobileOverlay.addEventListener('click', toggleMobileMenu);
+  
+  // Close mobile menu when clicking nav link
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('active')) {
+        toggleMobileMenu();
+      }
+    });
+  });
+  
+  // Enhanced Intersection Observer with staggered animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Add visible class immediately for better perceived performance
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  
+  // Observe all animated elements
+  document.querySelectorAll('.fade-in, .fade-up, .scale-in').forEach((el) => {
+    observer.observe(el);
+  });
+  
+  // Fallback: Add visible class to elements already in viewport on page load
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.fade-in, .fade-up, .scale-in').forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('visible');
+      }
+    });
+  });
+  
+  // Header scroll effect
+  const header = document.getElementById('header');
+  let lastScroll = 0;
+  
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+    lastScroll = currentScroll;
+  });
+  
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href !== '#' && href !== '#0') {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    });
+  });
 </script>
 
 </body>
